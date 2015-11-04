@@ -63,4 +63,49 @@ public class Person {
 	public URI getHref() {
 		return href;
 	}
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (!(obj instanceof Person))
+			return false;
+		Person other = (Person) obj;
+		if (email == null) {
+			if (other.email != null)
+				return false;
+		} else if (!email.equals(other.email))
+			return false;
+		if (href == null) {
+			if (other.href != null)
+				return false;
+		} else if (!href.equals(other.href))
+			return false;
+		if (id != other.id)
+			return false;
+		if (name == null) {
+			if (other.name != null)
+				return false;
+		} else if (!name.equals(other.name))
+			return false;
+		if (phoneList == null) {
+			if (other.phoneList != null)
+				return false;
+		} else if (!phoneList.equals(other.phoneList))
+			return false;
+		return true;
+	}
+
+		
+	
+/*	@Override
+	public boolean equals(Object p) {
+		Person pers = (Person) p; 
+		return this.name.equals(pers.getName())&& this.id == (pers.getId()) 
+				&& this.email.equals(pers.getEmail()) && this.href.equals(pers.getHref())
+				&& this.phoneList.equals(pers.getPhoneList());
+	}*/
 }
